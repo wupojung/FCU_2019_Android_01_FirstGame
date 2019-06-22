@@ -1,9 +1,7 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.Random;
+import java.util.Scanner;
 
-public class Main {
+public class UsingScanner {
     public static void main(String[] args) {
         //產生亂數數字
         Random rand = new Random();
@@ -15,8 +13,8 @@ public class Main {
 
                 //讀取數字 (用Buffered Reader的方法)
                 System.out.print("Enter Integer:");
-                BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-                int input_int = Integer.parseInt(br.readLine());
+                Scanner scanner = new Scanner(System.in);
+                int input_int = scanner.nextInt();
 
                 //檢查是否滿足遊戲結束條件(猜中數字)
                 if (random_num == input_int) {
@@ -29,8 +27,6 @@ public class Main {
 
             } catch (NumberFormatException nfe) {
                 System.err.println("Invalid Format!");
-            } catch (IOException exp) {
-                System.err.println("IOException Format!");
             }
         }
     }
